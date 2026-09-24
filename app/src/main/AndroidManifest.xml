@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 100% Offline Application: NO INTERNET PERMISSION REQUESTED -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- Notifikasi Waktu Sholat (Azan) -->
+    <!-- Lokasi dipakai HANYA untuk menghitung waktu sholat secara lokal (GPS), tanpa internet -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
+    <!-- Tidak wajib untuk AlarmManager.setAlarmClock(), hanya cadangan agar alarm reschedule harian tetap presisi -->
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
+
+    <application
+        android:name=".QuranApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AlQuranOffline">
+
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AlQuranOffline">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Deep links for shortcuts & notification click -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="alquran" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+
+        <receiver
+            android:name=".receiver.HadithNotificationReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name=".azan.AzanAlarmReceiver"
+            android:exported="false" />
+
+        <!-- Notifikasi Motivasi Harian (07:00 / 12:00 / 17:00) -->
+        <receiver
+            android:name=".receiver.MotivationalNotificationReceiver"
+            android:exported="false" />
+
+        <!-- Pengingat Tidur (21:00) -->
+        <receiver
+            android:name=".receiver.SleepRemovalNotificationReceiver"
+            android:exported="false" />
+
+        <!-- Pengingat Wudhu (21:00 / 22:00 / 00:00) -->
+        <receiver
+            android:name=".receiver.WudhuRemovalNotificationReceiver"
+            android:exported="false" />
+
+        <!-- Menghapus notifikasi pengingat tidur/wudhu setelah 5 menit -->
+        <receiver
+            android:name=".receiver.NotificationAutoCancelReceiver"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.azan.AzanFullScreenActivity"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:showWhenLocked="true"
+            android:turnScreenOn="true"
+            android:configChanges="orientation|screenSize|keyboardHidden|screenLayout"
+            android:theme="@style/Theme.AlQuranOffline" />
+
+        <receiver
+            android:name=".receiver.BootReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Open Source Provenance Metadata -->
+        <meta-data
+            android:name="com.alquran.offline.provenance.project_id"
+            android:value="quran-offline-kyuu-2026-c9f2a87b" />
+        <meta-data
+            android:name="com.alquran.offline.provenance.author"
+            android:value="Kyuu (KyuuX444)" />
+        <meta-data
+            android:name="com.alquran.offline.provenance.copyright"
+            android:value="© 2026 Kyuu / KyuuX444" />
+        <meta-data
+            android:name="com.alquran.offline.provenance.license"
+            android:value="MIT License" />
+
+    </application>
+
+</manifest>

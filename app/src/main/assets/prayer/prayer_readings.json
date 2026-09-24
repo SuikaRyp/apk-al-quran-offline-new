@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "title": "Niat Sholat Fardhu",
+    "category": "Niat",
+    "arabic": "أُصَلِّي فَرْضَ الصُّبْحِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى\n\nأُصَلِّي فَرْضَ الظُّهْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى\n\nأُصَلِّي فَرْضَ الْعَصْرِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى\n\nأُصَلِّي فَرْضَ الْمَغْرِبِ ثَلَاثَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى\n\nأُصَلِّي فَرْضَ الْعِشَاءِ أَرْبَعَ رَكَعَاتٍ مُسْتَقْبِلَ الْقِبْلَةِ أَدَاءً لِلَّهِ تَعَالَى",
+    "transliteration": "Subuh: Ushollii fardhash-shubhi rak'ataini mustaqbilal qiblati adaa-an lillaahi ta'aalaa.\n\nDzuhur: Ushollii fardhazh-zhuhri arba'a raka'aatin mustaqbilal qiblati adaa-an lillaahi ta'aalaa.\n\nAshar: Ushollii fardhal-'ashri arba'a raka'aatin mustaqbilal qiblati adaa-an lillaahi ta'aalaa.\n\nMaghrib: Ushollii fardhal-maghribi tsalaatsa raka'aatin mustaqbilal qiblati adaa-an lillaahi ta'aalaa.\n\nIsya: Ushollii fardhal-'isyaa-i arba'a raka'aatin mustaqbilal qiblati adaa-an lillaahi ta'aalaa.",
+    "translation": "Niat pada hakikatnya bertempat di dalam hati dengan keikhlasan semata mengharap ridha Allah Ta'ala.\n\nSubuh: \"Aku berniat sholat fardhu Subuh dua rakaat menghadap kiblat karena Allah Ta'ala.\"\nDzuhur: \"Aku berniat sholat fardhu Dzuhur empat rakaat menghadap kiblat karena Allah Ta'ala.\"\nAshar: \"Aku berniat sholat fardhu Ashar empat rakaat menghadap kiblat karena Allah Ta'ala.\"\nMaghrib: \"Aku berniat sholat fardhu Maghrib tiga rakaat menghadap kiblat karena Allah Ta'ala.\"\nIsya: \"Aku berniat sholat fardhu Isya empat rakaat menghadap kiblat karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 1 & Muslim no. 1907: \"Innamal a'maalu bin-niyyaat\" (Sesungguhnya setiap amalan tergantung pada niatnya).",
+    "explanation": "Niat adalah rukun sholat pertama. Niat wajib dihadirkan di dalam hati bersamaan dengan Takbiratul Ihram."
+  },
+  {
+    "id": 2,
+    "title": "Takbiratul Ihram",
+    "category": "Rukun Sholat",
+    "arabic": "اللهُ أَكْبَرُ",
+    "transliteration": "Allaahu Akbar",
+    "translation": "Allah Maha Besar.",
+    "source": "HR. Bukhari no. 735 & Muslim no. 390; HR. Abu Daud no. 61 & Tirmidzi no. 3.",
+    "explanation": "Takbiratul Ihram merupakan pembuka sholat sekaligus rukun sholat. Dengan bertakbir, diharamkan segala perbuatan dan ucapan yang membatalkan sholat hingga salam."
+  },
+  {
+    "id": 3,
+    "title": "Doa Iftitah (Riwayat Bukhari - Muslim)",
+    "category": "Sunnah Sholat",
+    "arabic": "اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ الْمَشْرِقِ وَالْمَغْرِبِ، اللَّهُمَّ نَقِّنِي مِنْ خَطَايَايَ كَمَا يُنَقَّى الثَّوْبُ الأَبْيَضُ مِنَ الدَّنَسِ، اللَّهُمَّ اغْسِلْنِي مِنْ خَطَايَايَ بِالْمَاءِ وَالثَّلْجِ وَالْبَرَدِ",
+    "transliteration": "Allaahumma baa'id bainii wa baina khathaayaaya kamaa baa'adta bainal masyriqi wal maghrib. Allaahumma naqqinii min khathaayaaya kamaa yunaqqats tsaubul abyadhu minad danas. Allaahummagh-silnii min khathaayaaya bil maa-i wats tsalji wal barad.",
+    "translation": "Ya Allah, jauhkanlah antara diriku dan kesalahan-kesalahanku sebagaimana Engkau menjauhkan antara timur dan barat. Ya Allah, bersihkanlah aku dari kesalahan-kesalahanku sebagaimana baju putih dibersihkan dari kotoran. Ya Allah, cucilah aku dari kesalahan-kesalahanku dengan air, salju, dan embun.",
+    "source": "Shahih Bukhari no. 744 & Shahih Muslim no. 598 (dari Abu Hurairah r.a.).",
+    "explanation": "Dibaca setelah Takbiratul Ihram sebelum membaca Al-Fatihah pada rakaat pertama. Doa ini adalah salah satu bacaan iftitah yang paling shahih dan sering dibaca Rasulullah SAW."
+  },
+  {
+    "id": 4,
+    "title": "Doa Iftitah (Wajjahtu)",
+    "category": "Sunnah Sholat",
+    "arabic": "وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالأَرْضَ حَنِيفًا مُسْلِمًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ، إِنَّ صَلاَتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ، لاَ شَرِيكَ لَهُ وَبِذَلِكَ أُمِرْتُ وَأَنَا مِنَ الْمُسْلِمِينَ",
+    "transliteration": "Wajjahtu wajhiya lilladzii fatharas samaawaati wal ardha haniifan musliman wa maa ana minal musyrikiin. Inna shalaatii wa nusukii wa mahyaaya wa mamaatii lillaahi rabbil 'aalamiin. Laa syariika lahu wa bidzaalika umirtu wa ana minal muslimiin.",
+    "translation": "Aku hadapkan wajahku kepada Dzat yang menciptakan langit dan bumi dengan lurus dan berserah diri, dan aku bukanlah termasuk orang-orang musyrik. Sesungguhnya sholatku, ibadahku, hidupku, dan matiku hanyalah untuk Allah, Tuhan semesta alam. Tidak ada sekutu bagi-Nya, demikianlah yang diperintahkan kepadaku dan aku termasuk orang-orang yang berserah diri.",
+    "source": "Shahih Muslim no. 771 (dari Ali bin Abi Thalib r.a.).",
+    "explanation": "Variasi doa iftitah yang masyhur dan shahih dalam Sunnah Nabawiyyah."
+  },
+  {
+    "id": 5,
+    "title": "Surah Al-Fatihah",
+    "category": "Rukun Sholat",
+    "arabic": "بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ۝ الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَٰنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+    "transliteration": "Bismillaahir-rahmaanir-rahiim. Al-hamdu lillaahi rabbil-'aalamiin. Ar-rahmaanir-rahiim. Maaliki yaumid-diin. Iyyaaka na'budu wa iyyaaka nasta'iin. Ihdinash-shiraathal-mustaqiim. Shiraathal-ladziina an'amta 'alaihim ghairil-maghdhuubi 'alaihim waladh-dhaalliin.",
+    "translation": "Dengan nama Allah Yang Maha Pengasih, Maha Penyayang. Segala puji bagi Allah, Tuhan seluruh alam. Yang Maha Pengasih, Maha Penyayang. Pemilik hari pembalasan. Hanya kepada Engkaulah kami menyembah dan hanya kepada Engkaulah kami mohon pertolongan. Tunjukilah kami jalan yang lurus. (Yaitu) jalan orang-orang yang telah Engkau beri nikmat kepadanya, bukan (jalan) mereka yang dimurkai, dan bukan (pula jalan) mereka yang sesat.",
+    "source": "QS. Al-Fatihah: 1-7; HR. Bukhari no. 756 & Muslim no. 394.",
+    "explanation": "Membaca Surah Al-Fatihah adalah rukun wajib dalam setiap rakaat sholat. Rasulullah SAW bersabda: \"Tidak sah sholat seseorang yang tidak membaca Al-Fatihah\"."
+  },
+  {
+    "id": 6,
+    "title": "Bacaan Ruku'",
+    "category": "Rukun Sholat",
+    "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ وَبِحَمْدِهِ",
+    "transliteration": "Subhaana rabbiyal 'azhiimi wa bihamdih (dibaca 3 kali).",
+    "translation": "Maha Suci Tuhanku Yang Maha Agung dan dengan memuji-Nya.",
+    "source": "HR. Abu Daud no. 869, 870; HR. Muslim no. 772 (dari Hudzaifah r.a.).",
+    "explanation": "Dibaca saat posisi ruku' dengan tenang (tuma'ninah). Minimal dibaca 1 kali dan sunnahnya 3 kali."
+  },
+  {
+    "id": 7,
+    "title": "Bacaan I'tidal (Bangkit dari Ruku')",
+    "category": "Rukun Sholat",
+    "arabic": "سَمِعَ اللهُ لِمَنْ حَمِدَهُ ۝ رَبَّنَا لَكَ الْحَمْدُ مِلْءَ السَّمَاوَاتِ وَمِلْءَ الأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ",
+    "transliteration": "Sami'allaahu liman hamidah. Rabbanaa lakal hamdu mil'us samaawaati wa mil'ul ardhi wa mil'u maa syi'ta min syai-in ba'du.",
+    "translation": "Allah mendengar orang yang memuji-Nya. Wahai Tuhan kami, bagi-Mu segala puji sepenuh langit dan sepenuh bumi, serta sepenuh apa saja yang Engkau kehendaki setelah itu.",
+    "source": "Shahih Bukhari no. 795 & Shahih Muslim no. 477 (dari Abu Hurairah & Ibnu Abi Aufa r.a.).",
+    "explanation": "Kalimat \"Sami'allahu liman hamidah\" diucapkan saat bergerak bangkit berdiri dari ruku', lalu dilanjutkan doa pujian \"Rabbana lakal hamd...\" saat telah tegak berdiri."
+  },
+  {
+    "id": 8,
+    "title": "Bacaan Sujud",
+    "category": "Rukun Sholat",
+    "arabic": "سُبْحَانَ رَبِّيَ الأَعْلَى وَبِحَمْدِهِ",
+    "transliteration": "Subhaana rabbiyal a'laa wa bihamdih (dibaca 3 kali).",
+    "translation": "Maha Suci Tuhanku Yang Maha Tinggi dan dengan memuji-Nya.",
+    "source": "HR. Abu Daud no. 870; HR. Muslim no. 772; HR. Tirmidzi no. 262.",
+    "explanation": "Dibaca saat posisi sujud dengan meletakkan 7 anggota sujud menempel lantai secara tuma'ninah. Dibaca 3 kali."
+  },
+  {
+    "id": 9,
+    "title": "Bacaan Duduk di Antara Dua Sujud",
+    "category": "Rukun Sholat",
+    "arabic": "رَبِّ اغْفِرْ لِي، وَارْحَمْنِي، وَاجْبُرْنِي، وَارْفَعْنِي، وَارْزُقْنِي، وَاهْدِنِي، وَعَافِنِي، وَاعْفُ عَنِّي",
+    "transliteration": "Rabbighfir lii, warhamnii, wajburnii, warfa'nii, warzuqnii, wahdinii, wa'aafinii, wa'fu 'annii.",
+    "translation": "Ya Tuhanku, ampunilah aku, rahmatilah aku, cukupkanlah kekuranganku, tinggikanlah derajatku, berilah aku rezeki, berilah aku petunjuk, sehatkanlah/selamatkanlah aku, dan maafkanlah aku.",
+    "source": "HR. Abu Daud no. 850; HR. Tirmidzi no. 284; HR. Ibnu Majah no. 898 (dari Ibnu Abbas r.a.).",
+    "explanation": "Dibaca saat posisi duduk iftirasy di antara dua sujud dengan tenang dan tuma'ninah."
+  },
+  {
+    "id": 10,
+    "title": "Tasyahud Awal",
+    "category": "Rukun / Wajib Sholat",
+    "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+    "transliteration": "At-tahiyyaatu lillaahi wash-shalawaatu wath-thayyibaat. As-salaamu 'alaika ayyuhan-nabiyyu wa rahmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahish-shaalihiin. Asyhadu allaa ilaaha illallaah, wa asyhadu anna Muhammadan 'abduhuu wa rasuuluh.",
+    "translation": "Segala penghormatan hanya milik Allah, juga segala doa dan kebaikan. Keselamatan semoga tercurah kepadamu wahai Nabi, beserta rahmat Allah dan berkah-Nya. Keselamatan semoga tercurah kepada kami dan kepada hamba-hamba Allah yang sholeh. Aku bersaksi bahwa tiada tuhan selain Allah, dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya.",
+    "source": "Shahih Bukhari no. 1202 & Shahih Muslim no. 402 (dari Abdullah bin Mas'ud r.a.).",
+    "explanation": "Dibaca pada duduk tasyahud awal (rakaat kedua pada sholat Dzuhur, Ashar, Maghrib, dan Isya)."
+  },
+  {
+    "id": 11,
+    "title": "Tasyahud Akhir & Shalawat Ibrahimiyah",
+    "category": "Rukun Sholat",
+    "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ.\n\nاللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ. اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ",
+    "transliteration": "At-tahiyyaatu lillaahi wash-shalawaatu wath-thayyibaat. As-salaamu 'alaika ayyuhan-nabiyyu wa rahmatullaahi wa barakaatuh. As-salaamu 'alainaa wa 'alaa 'ibaadillaahish-shaalihiin. Asyhadu allaa ilaaha illallaah, wa asyhadu anna Muhammadan 'abduhuu wa rasuuluh.\n\nAllaahumma shalli 'alaa Muhammad wa 'alaa aali Muhammad, kamaa shallaita 'alaa Ibraahiim wa 'alaa aali Ibraahiim, innaka hamiidum majiid. Allaahumma baarik 'alaa Muhammad wa 'alaa aali Muhammad, kamaa baarakta 'alaa Ibraahiim wa 'alaa aali Ibraahiim, innaka hamiidum majiid.",
+    "translation": "Segala penghormatan hanya milik Allah, juga segala doa dan kebaikan. Keselamatan tercurah kepadamu wahai Nabi, beserta rahmat Allah dan berkah-Nya. Keselamatan tercurah kepada kami dan hamba-hamba Allah yang sholeh. Aku bersaksi bahwa tiada tuhan selain Allah, dan Muhammad adalah hamba dan utusan-Nya.\n\nYa Allah, limpahkanlah shalawat kepada Nabi Muhammad dan keluarga Nabi Muhammad, sebagaimana Engkau telah melimpahkan shalawat kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia. Ya Allah, limpahkanlah berkah kepada Nabi Muhammad dan keluarga Nabi Muhammad, sebagaimana Engkau telah melimpahkan berkah kepada Nabi Ibrahim dan keluarga Nabi Ibrahim. Sesungguhnya Engkau Maha Terpuji lagi Maha Mulia.",
+    "source": "Shahih Bukhari no. 3370 & Shahih Muslim no. 406 (dari Ka'ab bin 'Ujrah r.a.).",
+    "explanation": "Dibaca pada duduk tasyahud akhir sebelum membaca doa perlindungan dan salam. Shalawat Ibrahimiyah adalah bentuk shalawat yang paling sempurna."
+  },
+  {
+    "id": 12,
+    "title": "Doa Perlindungan Sebelum Salam",
+    "category": "Sunnah Muakkadah",
+    "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ",
+    "transliteration": "Allaahumma innii a'uudzu bika min 'adzaabi jahannam, wa min 'adzaabil qabr, wa min fitnatil mahyaa wal mamaat, wa min syarri fitnatil masiihid dajjaal.",
+    "translation": "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari siksa neraka Jahannam, dari siksa kubur, dari fitnah kehidupan dan kematian, serta dari keburukan fitnah Al-Masih Ad-Dajjal.",
+    "source": "Shahih Bukhari no. 1377 & Shahih Muslim no. 588 (dari Abu Hurairah r.a.).",
+    "explanation": "Rasulullah SAW sangat menganjurkan membaca doa perlindungan dari 4 fitnah besar ini sesudah tasyahud akhir sebelum menoleh salam."
+  },
+  {
+    "id": 13,
+    "title": "Salam (Penutup Sholat)",
+    "category": "Rukun Sholat",
+    "arabic": "السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللهِ",
+    "transliteration": "As-salaamu 'alaikum wa rahmatullaah (menoleh ke arah kanan hingga pipi tampak dari belakang, lalu menoleh ke kiri).",
+    "translation": "Semoga keselamatan dan rahmat Allah tercurah kepadamu.",
+    "source": "Shahih Muslim no. 582 & HR. Abu Daud no. 996 (dari Abdullah bin Mas'ud r.a.).",
+    "explanation": "Salam pertama (menoleh ke kanan) adalah rukun sholat penutup, dan salam kedua (ke kiri) adalah sunnah."
+  },
+  {
+    "id": 14,
+    "title": "Dzikir Ba'da Sholat (Istighfar & Doa Keselamatan)",
+    "category": "Dzikir & Doa",
+    "arabic": "أَسْتَغْفِرُ اللهَ (٣×)\nاللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ، تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَالإِكْرَامِ",
+    "transliteration": "Astaghfirullaah (3 kali).\nAllaahumma antas-salaam wa minkas-salaam, tabaarakta yaa dzal-jalaali wal-ikraam.",
+    "translation": "Aku memohon ampun kepada Allah (3 kali).\nYa Allah, Engkaulah Dzat Yang Maha Memberi Keselamatan, dan dari-Mulah keselamatan, Maha Berkah Engkau wahai Dzat Pemilik Keagungan dan Kemuliaan.",
+    "source": "Shahih Muslim no. 591 (dari Tsauban r.a. - Rasulullah SAW membacanya setiap selesai sholat fardhu).",
+    "explanation": "Dzikir pertama yang dibaca segera setelah salam sholat fardhu."
+  },
+  {
+    "id": 15,
+    "title": "Tasbih, Tahmid, Takbir & Tahlil (33x)",
+    "category": "Dzikir & Doa",
+    "arabic": "سُبْحَانَ اللهِ (٣٣×)\nالْحَمْدُ لِلَّهِ (٣٣×)\nاللهُ أَكْبَرُ (٣٣×)\n\nلَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+    "transliteration": "Subhaanallaah (33 kali)\nAlhamdulillaah (33 kali)\nAllaahu Akbar (33 kali)\n\nLaa ilaaha illallaahu wahdahuu laa syariika lah, lahul mulku wa lahul hamdu wa huwa 'alaa kulli syai-in qadiir (1 kali).",
+    "translation": "Maha Suci Allah (33 kali).\nSegala puji bagi Allah (33 kali).\nAllah Maha Besar (33 kali).\n\nTiada sesembahan yang haq selain Allah semata, tiada sekutu bagi-Nya, milik-Nya segala kerajaan dan bagi-Nya segala pujian, dan Dia Maha Kuasa atas segala sesuatu.",
+    "source": "Shahih Muslim no. 597 (dari Abu Hurairah r.a.).",
+    "explanation": "Rasulullah SAW bersabda: \"Barangsiapa bertasbih 33x, bertahmid 33x, bertakbir 33x, dan menyempurnakannya menjadi seratus dengan kalimat tauhid ini setiap selesai sholat, diampuni dosa-dosanya meskipun sebanyak buih di lautan\"."
+  },
+  {
+    "id": 16,
+    "title": "Niat Sholat Jenazah Laki-laki (sebagai Imam)",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ إِمَامًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alaa haadzal mayyiti arba'a takbiiraatin fardhal kifaayati imaaman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah laki-laki ini, empat takbir, fardhu kifayah, sebagai imam, karena Allah Ta'ala.\"",
+    "source": "Niat pada hakikatnya bertempat di dalam hati (HR. Bukhari no. 1 & Muslim no. 1907: \"Innamal a'maalu bin-niyyaat\"). Lafaz niat sholat jenazah merupakan rumusan fiqih (madzhab Syafi'i) untuk membantu menghadirkan niat, sebagaimana termuat dalam kitab-kitab fiqih klasik. Ketentuan posisi imam berdasarkan riwayat Samurah bin Jundub r.a. (HR. Bukhari no. 1331 & Muslim no. 964).",
+    "explanation": "Sholat jenazah hukumnya fardhu kifayah: kewajiban gugur bagi seluruh kaum muslimin di suatu tempat apabila telah dilaksanakan oleh sebagian mereka. Niat cukup dihadirkan di dalam hati bersamaan takbiratul ihram; pelafalannya hanya bantuan, bukan syarat sah niat. Untuk jenazah laki-laki, imam (dan orang yang sholat sendirian) berdiri sejajar dengan bagian kepala jenazah."
+  },
+  {
+    "id": 17,
+    "title": "Niat Sholat Jenazah Laki-laki (sebagai Makmum)",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى هَذَا الْمَيِّتِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alaa haadzal mayyiti arba'a takbiiraatin fardhal kifaayati ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah laki-laki ini, empat takbir, fardhu kifayah, sebagai makmum, karena Allah Ta'ala.\"",
+    "source": "Niat pada hakikatnya bertempat di dalam hati (HR. Bukhari no. 1 & Muslim no. 1907: \"Innamal a'maalu bin-niyyaat\"). Lafaz niat sholat jenazah merupakan rumusan fiqih (madzhab Syafi'i) untuk membantu menghadirkan niat, sebagaimana termuat dalam kitab-kitab fiqih klasik. Ketentuan posisi imam berdasarkan riwayat Samurah bin Jundub r.a. (HR. Bukhari no. 1331 & Muslim no. 964).",
+    "explanation": "Sholat jenazah tidak memiliki ruku', sujud, maupun duduk di antara dua sujud; hanya empat takbir sambil berdiri, diselingi Al-Fatihah setelah takbir pertama, shalawat setelah takbir kedua, doa untuk mayit setelah takbir ketiga, dan doa setelah takbir keempat sebelum salam. Sebagai makmum, jamaah mengikuti takbir dan gerakan imam, kemudian menutup sholat dengan salam bersama imam."
+  },
+  {
+    "id": 18,
+    "title": "Niat Sholat Jenazah Perempuan (sebagai Imam)",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ إِمَامًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alaa haadzihil mayyitati arba'a takbiiraatin fardhal kifaayati imaaman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah perempuan ini, empat takbir, fardhu kifayah, sebagai imam, karena Allah Ta'ala.\"",
+    "source": "Niat pada hakikatnya bertempat di dalam hati (HR. Bukhari no. 1 & Muslim no. 1907: \"Innamal a'maalu bin-niyyaat\"). Lafaz niat sholat jenazah merupakan rumusan fiqih (madzhab Syafi'i) untuk membantu menghadirkan niat, sebagaimana termuat dalam kitab-kitab fiqih klasik. Ketentuan posisi imam berdasarkan riwayat Samurah bin Jundub r.a. (HR. Bukhari no. 1331 & Muslim no. 964).",
+    "explanation": "Untuk jenazah perempuan, imam (dan orang yang sholat sendirian) berdiri sejajar dengan bagian tengah/pinggang jenazah, mengikuti riwayat Samurah bin Jundub r.a. yang sholat di belakang Rasulullah SAW atas jenazah wanita yang wafat dalam keadaan nifas, dan beliau berdiri sejajar bagian tengah jenazahnya."
+  },
+  {
+    "id": 19,
+    "title": "Niat Sholat Jenazah Perempuan (sebagai Makmum)",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى هَذِهِ الْمَيِّتَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alaa haadzihil mayyitati arba'a takbiiraatin fardhal kifaayati ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah perempuan ini, empat takbir, fardhu kifayah, sebagai makmum, karena Allah Ta'ala.\"",
+    "source": "Niat pada hakikatnya bertempat di dalam hati (HR. Bukhari no. 1 & Muslim no. 1907: \"Innamal a'maalu bin-niyyaat\"). Lafaz niat sholat jenazah merupakan rumusan fiqih (madzhab Syafi'i) untuk membantu menghadirkan niat, sebagaimana termuat dalam kitab-kitab fiqih klasik. Ketentuan posisi imam berdasarkan riwayat Samurah bin Jundub r.a. (HR. Bukhari no. 1331 & Muslim no. 964).",
+    "explanation": "Sebagai makmum pada sholat jenazah perempuan, jamaah cukup mengikuti seluruh takbir dan bacaan yang dipimpin imam. Jika imam sudah lebih dulu memulai sholat sebelum makmum sempat berniat khusus jenazah tersebut, boleh menggunakan lafaz niat umum: \"Ushallii 'alaa man shallaa 'alaihil imaamu ma'muuman fardhan lillaahi ta'aalaa\" (Aku niat sholat atas jenazah yang disholatkan imam, sebagai makmum, fardhu, karena Allah Ta'ala)."
+  },
+  {
+    "id": 20,
+    "title": "Niat Sholat Idul Fitri (sebagai Imam)",
+    "category": "Sholat Idul Fitri & Idul Adha",
+    "arabic": "أُصَلِّي سُنَّةً لِعِيدِ الْفِطْرِ رَكْعَتَيْنِ إِمَامًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatan li'iidil fithri rak'ataini imaaman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Idul Fitri dua rakaat sebagai imam, karena Allah Ta'ala.\"",
+    "source": "Sholat dua hari raya dilaksanakan tanpa adzan maupun iqamah (HR. Muslim no. 887, dari Ibnu Abbas r.a.). Bacaan surah yang disunnahkan: QS. Qaf dan QS. Al-Qamar, atau QS. Al-A'la dan QS. Al-Ghasyiyah (HR. Muslim, dari An-Nu'man bin Basyir r.a.). Hukumnya sunnah muakkadah menurut jumhur ulama.",
+    "explanation": "Sholat Idul Fitri dikerjakan dua rakaat, disunnahkan berjamaah di tanah lapang, dan dilaksanakan sebelum khutbah tanpa adzan maupun iqamah. Pada rakaat pertama terdapat 7 kali takbir tambahan (di luar takbiratul ihram) sebelum membaca Al-Fatihah, dan pada rakaat kedua 5 kali takbir tambahan sebelum Al-Fatihah. Disunnahkan makan terlebih dahulu sebelum berangkat sholat."
+  },
+  {
+    "id": 21,
+    "title": "Niat Sholat Idul Fitri (sebagai Makmum)",
+    "category": "Sholat Idul Fitri & Idul Adha",
+    "arabic": "أُصَلِّي سُنَّةً لِعِيدِ الْفِطْرِ رَكْعَتَيْنِ مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatan li'iidil fithri rak'ataini ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Idul Fitri dua rakaat sebagai makmum, karena Allah Ta'ala.\"",
+    "source": "Sholat dua hari raya dilaksanakan tanpa adzan maupun iqamah (HR. Muslim no. 887, dari Ibnu Abbas r.a.). Bacaan surah yang disunnahkan: QS. Qaf dan QS. Al-Qamar, atau QS. Al-A'la dan QS. Al-Ghasyiyah (HR. Muslim, dari An-Nu'man bin Basyir r.a.). Hukumnya sunnah muakkadah menurut jumhur ulama.",
+    "explanation": "Sebagai makmum, jamaah mengikuti seluruh gerakan dan takbir tambahan yang dipimpin imam (7 kali di rakaat pertama, 5 kali di rakaat kedua), lalu mendengarkan khutbah setelah sholat selesai."
+  },
+  {
+    "id": 22,
+    "title": "Niat Sholat Idul Adha (sebagai Imam)",
+    "category": "Sholat Idul Fitri & Idul Adha",
+    "arabic": "أُصَلِّي سُنَّةً لِعِيدِ الْأَضْحَى رَكْعَتَيْنِ إِمَامًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatan li'iidil adhhaa rak'ataini imaaman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Idul Adha dua rakaat sebagai imam, karena Allah Ta'ala.\"",
+    "source": "Sholat dua hari raya dilaksanakan tanpa adzan maupun iqamah (HR. Muslim no. 887, dari Ibnu Abbas r.a.). Bacaan surah yang disunnahkan: QS. Qaf dan QS. Al-Qamar, atau QS. Al-A'la dan QS. Al-Ghasyiyah (HR. Muslim, dari An-Nu'man bin Basyir r.a.). Hukumnya sunnah muakkadah menurut jumhur ulama.",
+    "explanation": "Tata cara sholat Idul Adha sama dengan Idul Fitri (dua rakaat, takbir tambahan 7x di rakaat pertama dan 5x di rakaat kedua), namun disunnahkan disegerakan pelaksanaannya, dan dianjurkan menunda makan hingga setelah sholat/penyembelihan kurban."
+  },
+  {
+    "id": 23,
+    "title": "Niat Sholat Idul Adha (sebagai Makmum)",
+    "category": "Sholat Idul Fitri & Idul Adha",
+    "arabic": "أُصَلِّي سُنَّةً لِعِيدِ الْأَضْحَى رَكْعَتَيْنِ مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatan li'iidil adhhaa rak'ataini ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Idul Adha dua rakaat sebagai makmum, karena Allah Ta'ala.\"",
+    "source": "Sholat dua hari raya dilaksanakan tanpa adzan maupun iqamah (HR. Muslim no. 887, dari Ibnu Abbas r.a.). Bacaan surah yang disunnahkan: QS. Qaf dan QS. Al-Qamar, atau QS. Al-A'la dan QS. Al-Ghasyiyah (HR. Muslim, dari An-Nu'man bin Basyir r.a.). Hukumnya sunnah muakkadah menurut jumhur ulama.",
+    "explanation": "Sebagai makmum, jamaah mengikuti seluruh gerakan dan takbir tambahan yang dipimpin imam, kemudian dilanjutkan mendengarkan khutbah dan (bila mampu) menyembelih hewan kurban."
+  },
+  {
+    "id": 24,
+    "title": "Niat Sholat Tarawih (sebagai Imam)",
+    "category": "Sholat Tarawih & Witir",
+    "arabic": "أُصَلِّي سُنَّةَ التَّرَاوِيحِ رَكْعَتَيْنِ إِمَامًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatat-taraawiihi rak'ataini imaaman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Tarawih dua rakaat sebagai imam, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 37 & 2009 dan Muslim no. 759 (dari Abu Hurairah r.a.): \"Barangsiapa melaksanakan sholat malam pada bulan Ramadhan karena iman dan mengharap pahala dari Allah, akan diampuni dosa-dosanya yang telah lalu.\"",
+    "explanation": "Tarawih dikerjakan setiap 2 rakaat satu salam pada malam-malam bulan Ramadhan, dengan jumlah rakaat yang berbeda-beda menurut praktik masing-masing (umumnya 8 atau 20 rakaat), lalu ditutup dengan sholat Witir."
+  },
+  {
+    "id": 25,
+    "title": "Niat Sholat Tarawih (sebagai Makmum)",
+    "category": "Sholat Tarawih & Witir",
+    "arabic": "أُصَلِّي سُنَّةَ التَّرَاوِيحِ رَكْعَتَيْنِ مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatat-taraawiihi rak'ataini ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Tarawih dua rakaat sebagai makmum, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 37 & 2009 dan Muslim no. 759 (dari Abu Hurairah r.a.): \"Barangsiapa melaksanakan sholat malam pada bulan Ramadhan karena iman dan mengharap pahala dari Allah, akan diampuni dosa-dosanya yang telah lalu.\"",
+    "explanation": "Dianjurkan dikerjakan berjamaah di masjid mengikuti imam hingga selesai, karena pahalanya seperti sholat semalam penuh (HR. Abu Daud & Tirmidzi, dari Abu Dzar r.a.)."
+  },
+  {
+    "id": 26,
+    "title": "Niat Sholat Witir",
+    "category": "Sholat Tarawih & Witir",
+    "arabic": "أُصَلِّي سُنَّةَ الْوِتْرِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ لِلَّهِ تَعَالَى\n\nأُصَلِّي سُنَّةَ الْوِتْرِ رَكْعَةً وَاحِدَةً مُسْتَقْبِلَ الْقِبْلَةِ لِلَّهِ تَعَالَى",
+    "transliteration": "2 rakaat: Ushallii sunnatal witri rak'ataini mustaqbilal qiblati lillaahi ta'aalaa.\n\nPenutup/1 rakaat: Ushallii sunnatal witri rak'atan waahidatan mustaqbilal qiblati lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Witir dua rakaat menghadap kiblat, karena Allah Ta'ala.\"\n\n\"Aku niat sholat sunnah Witir satu rakaat menghadap kiblat, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 998 & Muslim (Kitab Shalat al-Musafirin), dari Ibnu Umar r.a.: \"Jadikanlah sholat witir sebagai penutup sholat malam kalian.\"",
+    "explanation": "Witir dikerjakan dalam bilangan rakaat ganjil (1, 3, 5, dan seterusnya), umumnya sebagai penutup sholat Tarawih atau Tahajud. Waktunya sejak setelah sholat Isya hingga sebelum masuk waktu Subuh."
+  },
+  {
+    "id": 27,
+    "title": "Niat Sholat Tahajud",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "أُصَلِّي سُنَّةَ التَّهَجُّدِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatat-tahajjudi rak'ataini mustaqbilal qiblati lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Tahajud dua rakaat menghadap kiblat, karena Allah Ta'ala.\"",
+    "source": "QS. Al-Isra' [17]: 79 dan HR. Muslim (Kitab Shiyam, dari Abu Hurairah r.a.): \"Sholat yang paling utama setelah sholat fardhu adalah sholat malam.\"",
+    "explanation": "Dilaksanakan pada sepertiga malam terakhir, setelah bangun dari tidur, minimal 2 rakaat dan tidak dibatasi jumlah maksimalnya. Termasuk keutamaan besar yang dianjurkan bagi Nabi Muhammad SAW secara khusus dan umatnya secara umum."
+  },
+  {
+    "id": 28,
+    "title": "Niat Sholat Dhuha",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "أُصَلِّي سُنَّةَ الضُّحَى رَكْعَتَيْنِ لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatadh-dhuhaa rak'ataini lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Dhuha dua rakaat, karena Allah Ta'ala.\"",
+    "source": "HR. Muslim no. 720 (dari Abu Dzar r.a.): setiap ruas tulang tubuh manusia wajib disedekahi setiap hari, dan dua rakaat Dhuha telah mencukupi kewajiban tersebut.",
+    "explanation": "Dikerjakan minimal 2 rakaat (maksimal umumnya 8-12 rakaat), pada waktu dhuha yaitu sejak matahari naik kira-kira sepenggalah (± 15-20 menit setelah terbit) hingga menjelang masuk waktu Dzuhur."
+  },
+  {
+    "id": 29,
+    "title": "Niat Sholat Istikharah",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "أُصَلِّي سُنَّةَ الاِسْتِخَارَةِ رَكْعَتَيْنِ لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatal-istikhaarati rak'ataini lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Istikharah dua rakaat, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 1166 (dari Jabir bin Abdillah r.a.): Rasulullah SAW mengajarkan para sahabat sholat istikharah dua rakaat dalam segala urusan, sebagaimana mengajarkan surah Al-Qur'an.",
+    "explanation": "Dikerjakan 2 rakaat untuk memohon petunjuk terbaik dari Allah dalam menentukan suatu pilihan yang masih diragukan, dilanjutkan membaca doa istikharah setelah salam."
+  },
+  {
+    "id": 30,
+    "title": "Niat Sholat Hajat",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "أُصَلِّي سُنَّةَ الْحَاجَةِ رَكْعَتَيْنِ مُسْتَقْبِلَ الْقِبْلَةِ لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnatal-haajati rak'ataini mustaqbilal qiblati lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Hajat dua rakaat menghadap kiblat, karena Allah Ta'ala.\"",
+    "source": "HR. Tirmidzi no. 479 (hasan gharib, dari Abdullah bin Abi Aufa r.a.): Rasulullah SAW mengajarkan sholat 2 rakaat lalu berdoa memohon kepada Allah ketika memiliki kebutuhan/hajat.",
+    "explanation": "Dikerjakan saat memiliki kebutuhan atau keinginan penting, dilanjutkan doa memohon agar hajatnya dimudahkan dan dikabulkan oleh Allah SWT."
+  },
+  {
+    "id": 31,
+    "title": "Niat Sholat Tahiyatul Masjid",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "أُصَلِّي سُنَّةَ تَحِيَّةِ الْمَسْجِدِ رَكْعَتَيْنِ لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii sunnata tahiyyatil masjidi rak'ataini lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah Tahiyatul Masjid dua rakaat, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 444 & Muslim no. 714 (dari Abu Qatadah r.a.): \"Apabila salah seorang di antara kalian memasuki masjid, janganlah duduk sebelum sholat dua rakaat.\"",
+    "explanation": "Dikerjakan sebagai penghormatan terhadap masjid, sebelum duduk setiap kali memasuki masjid, selama bukan pada waktu-waktu yang dimakruhkan untuk sholat."
+  },
+  {
+    "id": 32,
+    "title": "Niat Sholat Rawatib (Qabliyah & Ba'diyah)",
+    "category": "Sholat Sunnah Lainnya",
+    "arabic": "Qabliyah Subuh: أُصَلِّي سُنَّةَ الصُّبْحِ رَكْعَتَيْنِ قَبْلِيَّةً لِلَّهِ تَعَالَى\n\nQabliyah Dzuhur: أُصَلِّي سُنَّةَ الظُّهْرِ رَكْعَتَيْنِ قَبْلِيَّةً لِلَّهِ تَعَالَى\n\nBa'diyah Dzuhur: أُصَلِّي سُنَّةَ الظُّهْرِ رَكْعَتَيْنِ بَعْدِيَّةً لِلَّهِ تَعَالَى\n\nBa'diyah Maghrib: أُصَلِّي سُنَّةَ الْمَغْرِبِ رَكْعَتَيْنِ بَعْدِيَّةً لِلَّهِ تَعَالَى\n\nBa'diyah Isya: أُصَلِّي سُنَّةَ الْعِشَاءِ رَكْعَتَيْنِ بَعْدِيَّةً لِلَّهِ تَعَالَى",
+    "transliteration": "Qabliyah Subuh: Ushallii sunnatash-shubhi rak'ataini qabliyyatan lillaahi ta'aalaa.\n\nQabliyah Dzuhur: Ushallii sunnatazh-zhuhri rak'ataini qabliyyatan lillaahi ta'aalaa.\n\nBa'diyah Dzuhur: Ushallii sunnatazh-zhuhri rak'ataini ba'diyyatan lillaahi ta'aalaa.\n\nBa'diyah Maghrib: Ushallii sunnatal maghribi rak'ataini ba'diyyatan lillaahi ta'aalaa.\n\nBa'diyah Isya: Ushallii sunnatal 'isyaa-i rak'ataini ba'diyyatan lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat sunnah dua rakaat sebelum Subuh, karena Allah Ta'ala.\"\n\n\"Aku niat sholat sunnah dua rakaat sebelum Dzuhur, karena Allah Ta'ala.\"\n\n\"Aku niat sholat sunnah dua rakaat sesudah Dzuhur, karena Allah Ta'ala.\"\n\n\"Aku niat sholat sunnah dua rakaat sesudah Maghrib, karena Allah Ta'ala.\"\n\n\"Aku niat sholat sunnah dua rakaat sesudah Isya, karena Allah Ta'ala.\"",
+    "source": "HR. Muslim no. 728 (dari Ummu Habibah r.a.): \"Barangsiapa sholat sunnah 12 rakaat dalam sehari semalam, akan dibangunkan untuknya sebuah rumah di surga.\" Keutamaan khusus 2 rakaat qabliyah Subuh disebutkan dalam HR. Muslim no. 725 (dari Aisyah r.a.): \"lebih baik daripada dunia dan seisinya.\"",
+    "explanation": "Sholat rawatib adalah sholat sunnah yang mengiringi sholat fardhu; qabliyah dikerjakan sebelum dan ba'diyah sesudahnya. Rawatib muakkadah (paling dianjurkan) berjumlah 12 rakaat: 2 sebelum Subuh, 2 sebelum & 2 sesudah Dzuhur, 2 sesudah Maghrib, dan 2 sesudah Isya."
+  },
+  {
+    "id": 33,
+    "title": "Niat Sholat Jenazah Ghaib - Laki-laki",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى الْمَيِّتِ الْغَائِبِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ إِمَامًا / مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alal mayyitil ghaa-ibi arba'a takbiiraatin fardhal kifaayati imaaman/ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah laki-laki yang gaib (tidak hadir di tempat) ini, empat takbir, fardhu kifayah, sebagai imam/makmum, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 1245 & Muslim no. 951 (dari Abu Hurairah r.a.): Rasulullah SAW mengumumkan wafatnya raja Najasyi (Ashamah) pada hari kematiannya, lalu beliau keluar bersama para sahabat menuju tempat sholat dan menyalatkannya dengan empat takbir, meskipun jenazahnya berada jauh di negeri Habasyah.",
+    "explanation": "Sholat jenazah ghaib dilakukan untuk mendoakan jenazah muslim yang berada di tempat lain dan tidak hadir secara fisik, dengan tata cara sama seperti sholat jenazah biasa: 4 takbir, tanpa ruku' dan sujud, sambil berdiri menghadap kiblat."
+  },
+  {
+    "id": 34,
+    "title": "Niat Sholat Jenazah Ghaib - Perempuan",
+    "category": "Sholat Jenazah",
+    "arabic": "أُصَلِّي عَلَى الْمَيِّتَةِ الْغَائِبَةِ أَرْبَعَ تَكْبِيرَاتٍ فَرْضَ الْكِفَايَةِ إِمَامًا / مَأْمُومًا لِلَّهِ تَعَالَى",
+    "transliteration": "Ushallii 'alal mayyitatil ghaa-ibati arba'a takbiiraatin fardhal kifaayati imaaman/ma'muuman lillaahi ta'aalaa.",
+    "translation": "\"Aku niat sholat atas jenazah perempuan yang gaib (tidak hadir di tempat) ini, empat takbir, fardhu kifayah, sebagai imam/makmum, karena Allah Ta'ala.\"",
+    "source": "HR. Bukhari no. 1245 & Muslim no. 951 (dari Abu Hurairah r.a.): Rasulullah SAW mengumumkan wafatnya raja Najasyi (Ashamah) pada hari kematiannya, lalu beliau keluar bersama para sahabat menuju tempat sholat dan menyalatkannya dengan empat takbir, meskipun jenazahnya berada jauh di negeri Habasyah.",
+    "explanation": "Sama seperti sholat jenazah ghaib untuk laki-laki, dilakukan 4 takbir tanpa ruku' dan sujud. Sebagian ulama (madzhab Syafi'i) mensyaratkan jenazah berada di luar wilayah/kota tempat sholat dilaksanakan agar sholat ghaib ini disyariatkan."
+  }
+]

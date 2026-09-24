@@ -1,0 +1,151 @@
+name: Build APK
+
+# Otomatis build tiap ada push ke repo (mis. setelah semua file selesai diupload).
+# Bisa juga dijalankan manual dari tab Actions -> Build APK -> Run workflow.
+on:
+  push:
+    branches: ['**']
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+# Kalau file diupload satu per satu (banyak commit), run lama otomatis dibatalkan
+# dan hanya commit terakhir yang di-build.
+concurrency:
+  group: build-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    name: Tunggu upload selesai
+    runs-on: ubuntu-latest
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" = "workflow_dispatch" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          # Beri jeda supaya commit-commit susulan dari proses upload sempat masuk.
+          sleep 60
+          latest=$(gh api "repos/${GITHUB_REPOSITORY}/git/ref/heads/${GITHUB_REF_NAME}" --jq .object.sha)
+          if [ "$latest" = "$GITHUB_SHA" ]; then
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Ada commit yang lebih baru ($latest), run ini dilewati."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    name: Build APK
+    needs: guard
+    if: needs.guard.outputs.proceed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write   # untuk membuat GitHub Release berisi APK
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Cari folder project
+        id: locate
+        run: |
+          gw=$(find . -maxdepth 3 -name gradlew -not -path './.git/*' | head -n 1)
+          if [ -z "$gw" ]; then
+            echo "::error::gradlew tidak ditemukan. Pastikan seluruh isi project sudah terupload."
+            exit 1
+          fi
+          chmod +x "$gw"   # bit executable sering hilang saat upload lewat API
+          echo "dir=$(dirname "$gw")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Siapkan keystore
+        id: keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          SECRET_KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          SECRET_KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          SECRET_KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          ks="$RUNNER_TEMP/release.jks"
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 -d > "$ks"
+            {
+              echo "KEYSTORE_PASSWORD=$SECRET_KEYSTORE_PASSWORD"
+              echo "KEY_ALIAS=$SECRET_KEY_ALIAS"
+              echo "KEY_PASSWORD=$SECRET_KEY_PASSWORD"
+            } >> "$GITHUB_ENV"
+            echo "mode=keystore sendiri (secrets)" >> "$GITHUB_OUTPUT"
+          else
+            # Tanpa secrets: bikin keystore sementara supaya APK release tetap bisa diinstal.
+            keytool -genkeypair -v -keystore "$ks" -storetype PKCS12 \
+              -alias alquran -keyalg RSA -keysize 2048 -validity 10000 \
+              -storepass alquran-ci-temp -keypass alquran-ci-temp \
+              -dname "CN=AlQuranOffline CI, O=CI, C=ID" > /dev/null 2>&1
+            {
+              echo "KEYSTORE_PASSWORD=alquran-ci-temp"
+              echo "KEY_ALIAS=alquran"
+              echo "KEY_PASSWORD=alquran-ci-temp"
+            } >> "$GITHUB_ENV"
+            echo "mode=keystore sementara (tanda tangan beda tiap build)" >> "$GITHUB_OUTPUT"
+          fi
+          echo "KEYSTORE_FILE=$ks" >> "$GITHUB_ENV"
+
+      - name: Build release APK
+        working-directory: ${{ steps.locate.outputs.dir }}
+        run: ./gradlew assembleRelease --stacktrace
+
+      - name: Kumpulkan APK
+        id: collect
+        env:
+          DIR: ${{ steps.locate.outputs.dir }}
+        run: |
+          mkdir -p dist
+          d="$DIR/app/build/outputs/apk"
+          if [ -f "$d/release/alquran-offline-v1.apk" ]; then
+            cp "$d/release/alquran-offline-v1.apk" dist/alquran-offline-release.apk
+          else
+            echo "::error::APK release tidak ditemukan di $d/release"
+            ls -R "$d" || true
+            exit 1
+          fi
+          ls -la dist
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: alquran-offline-apk-${{ github.run_number }}
+          path: dist/*.apk
+          retention-days: 30
+
+      - name: Buat GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RUN_NUMBER: ${{ github.run_number }}
+        run: |
+          gh release create "build-${RUN_NUMBER}" dist/*.apk \
+            --target "$GITHUB_SHA" \
+            --title "Build #${RUN_NUMBER}" \
+            --notes "Commit ${GITHUB_SHA:0:7} - tanda tangan: ${{ steps.keystore.outputs.mode }}"
+
+      - name: Ringkasan
+        run: |
+          {
+            echo "### APK siap"
+            echo "- Download: tab **Releases** (tag \`build-${{ github.run_number }}\`) atau Artifacts di run ini"
+            echo "- Tanda tangan release: ${{ steps.keystore.outputs.mode }}"
+          } >> "$GITHUB_STEP_SUMMARY"
