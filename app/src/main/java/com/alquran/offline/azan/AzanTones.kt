@@ -26,7 +26,7 @@ object AzanTones {
     data class Tone(val id: String, val label: String)
 
     private val slots = listOf(
-        Tone("azan", "Adzan Utama"),
+        Tone("azan", "Baraka Allahu Lakuma"),
         Tone("azan_1", "Adzan 1"),
         Tone("azan_2", "Adzan 2"),
         Tone("azan_3", "Adzan 3"),
