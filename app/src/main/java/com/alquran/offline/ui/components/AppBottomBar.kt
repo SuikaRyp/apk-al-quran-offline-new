@@ -1,6 +1,7 @@
 package com.alquran.offline.ui.components
 
-import androidx.compose.foundation.layout.Column
+import android.app.Activity
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.MenuBook
 import androidx.compose.material.icons.automirrored.outlined.MenuBook
@@ -10,17 +11,25 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.outlined.BookmarkBorder
 import androidx.compose.material.icons.outlined.FormatQuote
 import androidx.compose.material.icons.outlined.Home
-import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
+import androidx.core.view.WindowCompat
+import com.alquran.offline.ui.theme.IslamicCream
+import com.alquran.offline.ui.theme.IslamicDeepGreen
+import com.alquran.offline.ui.theme.IslamicGold
+import com.alquran.offline.ui.theme.IslamicGreen
 
 sealed class BottomTab(
     val route: String,
@@ -43,13 +52,28 @@ fun AppBottomBar(
     currentRoute: String?,
     onTabSelected: (String) -> Unit
 ) {
-    Column {
-        HorizontalDivider(
-            thickness = 0.5.dp,
-            color = MaterialTheme.colorScheme.outline.copy(alpha = 0.5f)
-        )
+    // Area navigasi sistem ikut hijau tua selama bottom bar tampil.
+    val view = LocalView.current
+    DisposableEffect(Unit) {
+        val window = (view.context as? Activity)?.window
+        val controller = window?.let { WindowCompat.getInsetsController(it, view) }
+        val prevColor = window?.navigationBarColor
+        val prevLight = controller?.isAppearanceLightNavigationBars
+        window?.navigationBarColor = IslamicDeepGreen.toArgb()
+        controller?.isAppearanceLightNavigationBars = false
+        onDispose {
+            if (window != null && prevColor != null) window.navigationBarColor = prevColor
+            if (controller != null && prevLight != null) controller.isAppearanceLightNavigationBars = prevLight
+        }
+    }
+
+    Surface(
+        color = IslamicDeepGreen,
+        shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
+        shadowElevation = 12.dp
+    ) {
         NavigationBar(
-            containerColor = MaterialTheme.colorScheme.surface,
+            containerColor = Color.Transparent,
             tonalElevation = 0.dp
         ) {
             BottomTab.tabs.forEach { tab ->
@@ -80,11 +104,11 @@ fun AppBottomBar(
                         )
                     },
                     colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = MaterialTheme.colorScheme.primary,
-                        selectedTextColor = MaterialTheme.colorScheme.primary,
-                        indicatorColor = MaterialTheme.colorScheme.primaryContainer,
-                        unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f),
-                        unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.7f)
+                        selectedIconColor = Color.White,
+                        selectedTextColor = Color.White,
+                        indicatorColor = IslamicGreen,
+                        unselectedIconColor = IslamicCream.copy(alpha = 0.7f),
+                        unselectedTextColor = IslamicCream.copy(alpha = 0.7f)
                     )
                 )
             }
