@@ -1,6 +1,15 @@
 package com.alquran.offline.ui.screens.home
 
 import android.app.Activity
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -51,6 +60,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.draw.scale
+import androidx.compose.foundation.layout.offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
@@ -86,6 +97,7 @@ fun HomeScreen(
     onNavigateToDailyPrayer: () -> Unit = {},
     onNavigateToAsmaulHusna: () -> Unit = {},
     onNavigateToAmalan: () -> Unit = {},
+    onNavigateToMedia: () -> Unit = {},
     onNavigateToBookmark: () -> Unit,
     onNavigateToSearch: () -> Unit,
     onNavigateToSettings: () -> Unit,
@@ -115,6 +127,15 @@ fun HomeScreen(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0, 0, 0, 0)
     ) { innerPadding ->
+        AnimatedVisibility(
+            visible = true,
+            enter = fadeIn(animationSpec = tween(durationMillis = 420)) +
+                slideInVertically(
+                    animationSpec = tween(durationMillis = 420),
+                    initialOffsetY = { fullHeight -> fullHeight / 24 }
+                ),
+            modifier = Modifier.fillMaxSize()
+        ) {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -316,6 +337,10 @@ fun HomeScreen(
                     MenuRow(
                         left = MenuItem("Tasbih Digital", "Dzikir & target", Icons.Default.Explore, onNavigateToAmalan, gold = true),
                         right = MenuItem("Amalan Harian", "Pantau ibadah", Icons.Default.CalendarMonth, onNavigateToAmalan)
+                    )
+                    MenuRow(
+                        left = MenuItem("Audio Islami", "Azan & bacaan offline", Icons.Default.AutoStories, onNavigateToMedia),
+                        right = MenuItem("Video Islami", "Koleksi pilihan", Icons.Default.Mosque, onNavigateToMedia, gold = true)
                     )
                 }
             }
@@ -528,6 +553,7 @@ fun HomeScreen(
 
             item { Spacer(modifier = Modifier.height(12.dp)) }
         }
+        }
     }
 }
 
@@ -570,66 +596,86 @@ private fun MenuRow(left: MenuItem, right: MenuItem) {
 
 @Composable
 private fun QuickMenuCard(item: MenuItem, modifier: Modifier = Modifier) {
-    val shape = RoundedCornerShape(20.dp)
-    val iconBrush = if (item.gold) {
-        Brush.linearGradient(listOf(Color(0xFF8A7A45), Color(0xFF4F5B33)))
-    } else {
-        Brush.linearGradient(listOf(IslamicGreen, IslamicDeepGreen))
-    }
-    Surface(
-        shape = shape,
-        color = MaterialTheme.colorScheme.surface,
-        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline.copy(alpha = 0.6f)),
+    // Launcher-style widget: no bulky card, just a softly animated icon and clear label.
+    // A tiny stagger keeps the movement organic rather than making every icon bounce together.
+    val motion = rememberInfiniteTransition(label = "${item.title}WidgetMotion")
+    val floatY by motion.animateFloat(
+        initialValue = -2.5f,
+        targetValue = 2.5f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(
+                durationMillis = 1900 + (item.title.length * 45),
+                delayMillis = (item.title.length * 73) % 520
+            ),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "${item.title}Float"
+    )
+    val pulse by motion.animateFloat(
+        initialValue = 0.97f,
+        targetValue = 1.035f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 2200 + (item.title.length * 35)),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "${item.title}Pulse"
+    )
+    val iconTint = if (item.gold) Color(0xFF9A7A32) else IslamicGreen
+    val iconBackground = if (item.gold) Color(0xFFF4EBD3) else Color(0xFFE3F0E9)
+
+    Column(
         modifier = modifier
-            .shadow(3.dp, shape, ambientColor = Color(0x22000000), spotColor = Color(0x22000000))
-            .clip(shape)
+            .clip(RoundedCornerShape(18.dp))
             .clickable(onClick = item.onClick)
+            .padding(horizontal = 4.dp, vertical = 9.dp)
+            .animateContentSize(animationSpec = tween(220)),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(7.dp)
     ) {
-        Row(
+        Box(
             modifier = Modifier
-                .heightIn(min = 76.dp)
-                .padding(horizontal = 12.dp, vertical = 12.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
+                .offset(y = floatY.dp)
+                .size(54.dp)
+                .scale(pulse)
+                .clip(CircleShape)
+                .background(iconBackground),
+            contentAlignment = Alignment.Center
         ) {
+            // Thin inset ring gives the icon a tactile, polished widget appearance.
             Box(
                 modifier = Modifier
-                    .size(42.dp)
-                    .clip(RoundedCornerShape(14.dp))
-                    .background(iconBrush),
+                    .size(44.dp)
+                    .clip(CircleShape)
+                    .background(iconBackground.copy(alpha = 0.55f)),
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
                     imageVector = item.icon,
                     contentDescription = null,
-                    tint = IslamicCream,
-                    modifier = Modifier.size(22.dp)
+                    tint = iconTint,
+                    modifier = Modifier.size(25.dp)
                 )
             }
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = item.title,
-                    fontSize = 13.5.sp,
-                    lineHeight = 17.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = MaterialTheme.colorScheme.onSurface,
-                    maxLines = 2,
-                    overflow = TextOverflow.Ellipsis
-                )
-                Text(
-                    text = item.subtitle,
-                    fontSize = 11.sp,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
-            }
-            Icon(
-                imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.size(16.dp)
-            )
         }
+        Text(
+            text = item.title,
+            fontSize = 12.sp,
+            lineHeight = 15.sp,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurface,
+            maxLines = 2,
+            minLines = 2,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
+        Text(
+            text = item.subtitle,
+            fontSize = 10.sp,
+            lineHeight = 12.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            textAlign = androidx.compose.ui.text.style.TextAlign.Center
+        )
     }
 }

@@ -10,6 +10,7 @@ sealed class Screen(val route: String) {
     object BackupRestore : Screen("backup_restore")
     object IslamicTools : Screen("islamic_tools")
     object Amalan : Screen("amalan")
+    object MediaLibrary : Screen("media_library")
     object Privacy : Screen("privacy")
     object About : Screen("about")
     object PrayerList : Screen("prayer_list")

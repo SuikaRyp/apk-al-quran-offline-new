@@ -46,6 +46,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -71,6 +72,7 @@ fun AmalanScreen(onBackClick: () -> Unit) {
     val context = LocalContext.current
     val day = remember { SimpleDateFormat("yyyy-MM-dd", Locale.ROOT).format(Date()) }
     val prefs = remember(day) { context.getSharedPreferences("amalan_tracker", Context.MODE_PRIVATE) }
+    var selectedTab by remember { mutableStateOf("Semua") }
     var count by remember { mutableIntStateOf(prefs.getInt("tasbih_count", 0)) }
     var target by remember { mutableIntStateOf(prefs.getInt("tasbih_target", 33)) }
     var pagesRead by remember { mutableIntStateOf(prefs.getInt("khatam_pages_read", 0).coerceIn(0, 604)) }
@@ -115,6 +117,14 @@ fun AmalanScreen(onBackClick: () -> Unit) {
         }
     }) { padding ->
         LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = androidx.compose.foundation.layout.PaddingValues(start = 18.dp, end = 18.dp, bottom = 28.dp), verticalArrangement = Arrangement.spacedBy(16.dp)) {
+            item {
+                Row(Modifier.fillMaxWidth().horizontalScroll(rememberScrollState()), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                    listOf("Semua", "Tasbih", "Amalan", "Progres").forEach { tab ->
+                        AssistChip(onClick = { selectedTab = tab }, label = { Text(tab) }, colors = AssistChipDefaults.assistChipColors(containerColor = if (selectedTab == tab) Green else MaterialTheme.colorScheme.surfaceVariant, labelColor = if (selectedTab == tab) androidx.compose.ui.graphics.Color.White else MaterialTheme.colorScheme.onSurfaceVariant))
+                    }
+                }
+            }
+            if (selectedTab == "Semua" || selectedTab == "Tasbih") {
             item {
                 Card(shape = RoundedCornerShape(26.dp), colors = CardDefaults.cardColors(containerColor = Green), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.fillMaxWidth().padding(20.dp), horizontalAlignment = Alignment.CenterHorizontally) {
@@ -163,6 +173,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Amalan") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -183,6 +196,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Amalan") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)) {
                     Column(Modifier.padding(18.dp)) {
@@ -208,6 +224,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -232,6 +251,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -243,6 +265,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -270,6 +295,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -287,6 +315,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -303,6 +334,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
@@ -313,6 +347,9 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (selectedTab == "Semua" || selectedTab == "Progres") {
             item {
                 Card(shape = RoundedCornerShape(24.dp), colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface), border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant), modifier = Modifier.fillMaxWidth()) {
                     Column(Modifier.padding(18.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -349,8 +386,12 @@ fun AmalanScreen(onBackClick: () -> Unit) {
                     }
                 }
             }
+
+            }
+            if (true) {
             item {
                 Text("Catatan: daftar ini adalah pengingat pribadi, bukan penilaian kesalehan. Target halaman adalah perkiraan untuk mushaf 604 halaman dan dapat disesuaikan.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant, modifier = Modifier.padding(horizontal = 4.dp))
+            }
             }
         }
     }

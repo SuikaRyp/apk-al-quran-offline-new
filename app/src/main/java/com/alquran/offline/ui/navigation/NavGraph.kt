@@ -30,6 +30,7 @@ import com.alquran.offline.ui.screens.hadith.HadithListViewModel
 import com.alquran.offline.ui.screens.home.HomeScreen
 import com.alquran.offline.ui.screens.home.HomeViewModel
 import com.alquran.offline.ui.screens.amalan.AmalanScreen
+import com.alquran.offline.ui.screens.media.MediaLibraryScreen
 import com.alquran.offline.ui.screens.juz.JuzListScreen
 import com.alquran.offline.ui.screens.juz.JuzListViewModel
 import com.alquran.offline.ui.screens.prayer.PrayerDetailScreen
@@ -80,6 +81,7 @@ fun NavGraph(
                 onNavigateToDailyPrayer = { navController.navigateSafe(Screen.DailyPrayerList.route) },
                 onNavigateToAsmaulHusna = { navController.navigateSafe(Screen.AsmaulHusna.route) },
                 onNavigateToAmalan = { navController.navigateSafe(Screen.Amalan.route) },
+                onNavigateToMedia = { navController.navigateSafe(Screen.MediaLibrary.route) },
                 onNavigateToBookmark = { navController.navigateSafe(Screen.Bookmark.route) },
                 onNavigateToSearch = { navController.navigateSafe(Screen.Search.route) },
                 onNavigateToSettings = { navController.navigateSafe(Screen.Settings.route) },
@@ -309,6 +311,10 @@ fun NavGraph(
         // Daily worship tracker and digital tasbih
         composable(Screen.Amalan.route) {
             AmalanScreen(onBackClick = { navController.popBackStackSafe() })
+        }
+
+        composable(Screen.MediaLibrary.route) {
+            MediaLibraryScreen(onBackClick = { navController.popBackStackSafe() })
         }
 
         // Settings Screen
