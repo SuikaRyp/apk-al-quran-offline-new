@@ -58,7 +58,7 @@ fun PrivacyScreen(onBackClick: () -> Unit) {
                     )
                     Spacer(modifier = Modifier.height(6.dp))
                     Text(
-                        text = "Aplikasi ini dirancang untuk beroperasi sepenuhnya tanpa koneksi internet. Tidak ada izin akses jaringan (INTERNET permission) yang diminta oleh aplikasi ini ke sistem operasi Android. Seluruh data teks Al-Qur'an, Hadits, dan Bacaan Sholat telah disertakan langsung di dalam paket instalasi tanpa bergantung pada server luar.",
+                        text = "Teks Al-Qur'an, Hadits, doa, dan bacaan sholat tersedia lokal. Koneksi internet hanya digunakan bila Anda memilih mengunduh rekaman murottal Al-Husary. Audio yang sudah selesai diunduh disimpan di penyimpanan internal aplikasi dan dapat diputar tanpa internet. Tidak ada akun yang diperlukan.",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         lineHeight = 22.sp

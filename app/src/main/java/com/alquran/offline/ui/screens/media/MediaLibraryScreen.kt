@@ -88,7 +88,8 @@ fun MediaLibraryScreen(onBackClick: () -> Unit) {
         OnlineMedia("Adhan in Istanbul", "Video azan · Wikimedia Commons", "https://commons.wikimedia.org/wiki/File:Adhan_in_Istanbul.webm", "CC0 · oleh Viceskeeni2"),
         OnlineMedia("Adhan, Great Mosque of Mecca", "Video azan · Makkah", "https://commons.wikimedia.org/wiki/File:Adhan,_Great_Mosque_of_Mecca_-_Jan_21,_2013.webm", "CC BY 3.0 · atribusi Seyfula Islam"),
         OnlineMedia("Adhan in Shalqar Mosque", "Video azan di masjid", "https://commons.wikimedia.org/wiki/File:Adhan_in_Shalqar_mosque.webm", "Lihat ketentuan lisensi di halaman sumber"),
-        OnlineMedia("Quran MP4", "Video Al-Qur'an dengan teks dan bacaan", "https://quranmp4.com/resources", "Baca kredit dan lisensi sebelum menggunakan")
+        OnlineMedia("Quran MP4", "Video Al-Qur'an dengan teks dan bacaan", "https://quranmp4.com/resources", "Baca kredit dan lisensi sebelum menggunakan"),
+        OnlineMedia("Anak sedang sholat — ilustrasi referensi", "Foto CC0 dari Wikimedia Commons; bukan animasi", "https://commons.wikimedia.org/wiki/File:Muslim_Kid_Praying.jpg", "CC0 · chidioc · Wikimedia Commons")
     )
     Scaffold(containerColor = MaterialTheme.colorScheme.background, topBar = {
         Row(Modifier.fillMaxWidth().padding(horizontal = 12.dp, vertical = 8.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -99,7 +100,7 @@ fun MediaLibraryScreen(onBackClick: () -> Unit) {
             }
         }
     }) { padding ->
-        LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = androidx.compose.foundation.layout.PaddingValues(horizontal = 18.dp, vertical = 10.dp, bottom = 28.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
+        LazyColumn(Modifier.fillMaxSize().padding(padding), contentPadding = androidx.compose.foundation.layout.PaddingValues(start = 18.dp, top = 10.dp, end = 18.dp, bottom = 28.dp), verticalArrangement = Arrangement.spacedBy(14.dp)) {
             item {
                 Column(Modifier.fillMaxWidth().background(Green, RoundedCornerShape(24.dp)).padding(20.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
                     Text("مكتبة الصوت", color = Gold, fontSize = 24.sp)

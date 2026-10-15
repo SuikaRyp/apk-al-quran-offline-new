@@ -1,24 +1,25 @@
-# Suika Al-Qur’an — Media Library Sources
+# Suika Al-Qur'an media sources
 
-## Bundled offline audio
+## Recitations
 
-The media screen plays the two MP3 files already present in the project:
-- `app/src/main/res/raw/azan.mp3`
-- `app/src/main/res/raw/azan_1.mp3`
+Audio files are original recordings fetched per ayah from EveryAyah directories:
+- Mahmoud Khalil Al-Husary — `Husary_128kbps`
+- Mishary Rashid Alafasy — `Alafasy_128kbps`
+- Abdul Basit Abdus-Samad — `Abdul_Basit_Murattal_192kbps`
+- Abdurrahman As-Sudais — `Abdurrahmaan_As-Sudais_192kbps`
+- Mohamed Siddiq Al-Minshawi — `Minshawy_Murattal_128kbps`
 
-Their original provenance should be checked against the upstream project before redistribution. This update did not replace or claim new ownership of those recordings.
+Source host: https://everyayah.com/data/ . Audio license/redistribution conditions can differ by recording; check terms before distributing a commercial build. The app only caches recordings after a user requests download.
 
-## Audio references (open source page)
+## Reciter profile photos
 
-- Al-Fatihah audio, Wikimedia Commons: https://commons.wikimedia.org/wiki/File:001Fatiha.ogg — listed as CC0 on the source page.
-- Al-Ikhlas recitation, Wikimedia Commons: https://commons.wikimedia.org/wiki/File:112.AlIkhlas-MisharyRashedAlafasy.ogg — listed as CC0 on the source page.
-- Adhan, Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Adhan.ogg — listed as CC0 on the source page.
+- Mahmoud Khalil Al-Husary: https://commons.wikimedia.org/wiki/File:Hussary.jpg — public domain dedication as shown on Wikimedia Commons.
+- Mishary Rashid Alafasy: https://www.merchbar.com/uncategorized/sheikh-mishary-alafasy — portrait source; rights remain with the rights holder.
+- Abdul Basit Abdus-Samad: https://way2quran.com/ar/reciters/abdul-basit-abdul-samad-%28mujawd%29 — portrait source; rights remain with the rights holder.
+- As-Sudais and Al-Minshawi profile URL endpoints are loaded as best-effort online images; fallback initials are shown if unavailable. Verify image provenance and permission before public/commercial redistribution.
 
-## Video references (online; not bundled into the APK)
+## Open-source reference implementations
 
-- Adhan in Istanbul: https://commons.wikimedia.org/wiki/File:Adhan_in_Istanbul.webm — CC0 according to its source page.
-- Adhan at the Great Mosque of Mecca: https://commons.wikimedia.org/wiki/File:Adhan,_Great_Mosque_of_Mecca_-_Jan_21,_2013.webm — CC BY 3.0; credit Seyfula Islam and retain attribution.
-- Adhan in Shalqar Mosque: https://commons.wikimedia.org/wiki/File:Adhan_in_Shalqar_mosque.webm — check the current source page for applicable terms.
-- Quran MP4 resources: https://quranmp4.com/resources — check individual media and dataset licenses before redistribution.
-
-The app opens these source pages in the browser. Online sources require internet and are not downloaded for offline playback. Video files were not bundled in this update because this environment could not access the source hosts. Always review the source page and license before redistributing media.
+- https://github.com/Bsracc/daily-quran — MIT, multi-reciter catalogue and cached playback design.
+- https://github.com/hassaanjamil/hj-qibla-compass — Apache-2.0 / MIT, Compose Qibla compass helpers.
+- https://github.com/katsugtgz/shollu-android — MIT, sensor and Qibla bearing design.

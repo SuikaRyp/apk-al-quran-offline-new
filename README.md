@@ -190,3 +190,30 @@ Build APK belum diverifikasi pada lingkungan ini karena Gradle Wrapper perlu men
 - Version bumped to 1.2 (versionCode 3).
 
 Build verification note: `./gradlew assembleDebug --offline` could not start because the Gradle 8.5 distribution is not cached and network access to services.gradle.org was unavailable.
+
+
+## V11 build fixes and accessibility
+- Fixed `PaddingValues` named arguments in `MediaLibraryScreen.kt` (`bottom` compile error).
+- Added a speaker action to each Quran ayah to read the Indonesian translation with Android TextToSpeech. This is synthetic speech for the translation, not a tajwid-accurate Quran recitation.
+- Added a link to a CC0 child-praying reference photo on Wikimedia Commons. The link is an image reference, not an animated asset.
+- Version bumped to 1.7 (versionCode 8).
+
+
+### Audio murottal V1.8
+Tombol speaker pada ayat kini memutar rekaman murattal Al-Husary (Hafs) per ayat dari EveryAyah, bukan suara Text-to-Speech. Streaming memerlukan koneksi internet; teks Al-Qur'an dan fitur lokal tetap tersedia offline. Audio hosted pihak ketiga dapat berubah atau tidak tersedia.
+
+
+## Murottal offline (v1.9)
+
+- Reciter: Mahmoud Khalil Al-Husary, murattal 128 kbps, Hafs an Asim, per ayah.
+- Source audio: EveryAyah (`https://everyayah.com/data/Husary_128kbps/`), using the documented `SSSAAA.mp3` naming convention. The app downloads audio into its private internal storage; it does not bundle third-party recordings into this source archive.
+- In the reader, choose **Unduh semua murottal agar offline** and confirm the download. It downloads 6,236 ayah recordings and can require around 1 GB or more, a stable connection, and considerable time. Existing valid files are skipped so a failed download can be resumed by pressing download again.
+- After completion, the speaker button plays local files and does not need internet. Before downloading, a tapped ayah is streamed from EveryAyah.
+- Audio source and metadata reference: https://github.com/Mushaf-Learning/quran-audio . The GitHub project's MIT license applies to its metadata/scripts, not automatically to the hosted audio; verify the audio provider's terms before redistributing recordings.
+
+## V14 — pilihan qari dan kompas kiblat
+
+- Pilihan qari: Mahmoud Khalil Al-Husary, Mishary Rashid Alafasy, Abdul Basit Abdus-Samad, Abdurrahman As-Sudais, dan Mohamed Siddiq Al-Minshawi. Rekaman audio diambil dari direktori EveryAyah dan setiap qari memiliki cache offline terpisah.
+- Foto profil qari dimuat dari URL sumber yang dicantumkan di kode dan disimpan di penyimpanan privat aplikasi setelah berhasil diambil. Jika foto gagal dimuat atau belum pernah di-cache, aplikasi menampilkan avatar inisial. Foto dari pihak ketiga tetap tunduk pada lisensi/hak pemilik masing-masing.
+- Kompas kiblat menampilkan arah relatif pada dial, menggunakan sensor rotation-vector dan koreksi deklinasi magnetik jika lokasi tersedia. Kalibrasi sensor dan kualitas perangkat tetap memengaruhi akurasi.
+- Sumber referensi implementasi: `https://github.com/Bsracc/daily-quran` (MIT, multiple reciters/cache); `https://github.com/hassaanjamil/hj-qibla-compass` (Apache-2.0/MIT, Compose compass); `https://github.com/katsugtgz/shollu-android` (MIT, Qibla calculator/sensor fusion). Referensi ini dipelajari untuk pendekatan, bukan disalin sebagai modul biner.

@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.location.Location
 import android.location.LocationManager
+import android.hardware.GeomagneticField
 import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Build
@@ -16,6 +17,7 @@ import android.icu.util.IslamicCalendar
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -35,6 +37,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.drawscope.rotate
 import androidx.core.content.ContextCompat
 import com.alquran.offline.ui.components.AppTopBar
 import java.text.SimpleDateFormat
@@ -74,7 +80,7 @@ fun IslamicToolsScreen(onBackClick: () -> Unit) {
         } else locationMessage = "Izin lokasi ditolak. Arah kiblat belum bisa dihitung."
     }
 
-    DisposableEffect(context) {
+    DisposableEffect(context, location) {
         val manager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager
         val sensor = manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR)
         val listener = object : SensorEventListener {
@@ -83,7 +89,17 @@ fun IslamicToolsScreen(onBackClick: () -> Unit) {
                 val orientation = FloatArray(3)
                 SensorManager.getRotationMatrixFromVector(matrix, event.values)
                 SensorManager.getOrientation(matrix, orientation)
-                azimuth = ((Math.toDegrees(orientation[0].toDouble()).toFloat() + 360f) % 360f)
+                val magneticHeading = (Math.toDegrees(orientation[0].toDouble()).toFloat() + 360f) % 360f
+                val currentLocation = location
+                val declination = if (currentLocation != null) {
+                    GeomagneticField(
+                        currentLocation.latitude.toFloat(), currentLocation.longitude.toFloat(),
+                        currentLocation.altitude.toFloat(), System.currentTimeMillis()
+                    ).declination
+                } else 0f
+                val trueHeading = (magneticHeading + declination + 360f) % 360f
+                val delta = ((trueHeading - azimuth + 540f) % 360f) - 180f
+                azimuth = (azimuth + delta * 0.22f + 360f) % 360f
             }
             override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) = Unit
         }
@@ -125,8 +141,44 @@ fun IslamicToolsScreen(onBackClick: () -> Unit) {
                         Icon(Icons.Default.Explore, contentDescription = null, tint = MaterialTheme.colorScheme.primary)
                         Text("Kompas Kiblat", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     }
-                    Box(Modifier.size(190.dp).background(MaterialTheme.colorScheme.surfaceVariant, RoundedCornerShape(100.dp)), contentAlignment = Alignment.Center) {
-                        Text(if (relativeQibla == null) "N\n↑" else "🕋\n${relativeQibla.toInt()}°", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary)
+                    val compassPrimary = MaterialTheme.colorScheme.primary
+                    val compassSurfaceVariant = MaterialTheme.colorScheme.surfaceVariant
+                    val compassOutline = MaterialTheme.colorScheme.outline
+                    val compassOnSurface = MaterialTheme.colorScheme.onSurfaceVariant
+                    val compassSurface = MaterialTheme.colorScheme.surface
+                    Box(Modifier.size(220.dp), contentAlignment = Alignment.Center) {
+                        Canvas(Modifier.fillMaxSize()) {
+                            val center = Offset(size.width / 2f, size.height / 2f)
+                            val radius = size.minDimension * 0.46f
+                            drawCircle(color = compassSurfaceVariant, radius = radius, center = center)
+                            drawCircle(color = compassOutline.copy(alpha = 0.65f), radius = radius, center = center, style = Stroke(width = 2.dp.toPx()))
+                            for (tick in 0 until 36) {
+                                rotate(tick * 10f, pivot = center) {
+                                    val outer = Offset(center.x, center.y - radius + 8.dp.toPx())
+                                    val inner = Offset(center.x, center.y - radius + if (tick % 3 == 0) 19.dp.toPx() else 14.dp.toPx())
+                                    drawLine(compassOnSurface.copy(alpha = 0.7f), outer, inner, strokeWidth = if (tick % 3 == 0) 2.dp.toPx() else 1.dp.toPx())
+                                }
+                            }
+                            if (relativeQibla != null) {
+                                rotate(relativeQibla, pivot = center) {
+                                    val tip = Offset(center.x, center.y - radius * 0.78f)
+                                    val baseLeft = Offset(center.x - 8.dp.toPx(), center.y + 4.dp.toPx())
+                                    val baseRight = Offset(center.x + 8.dp.toPx(), center.y + 4.dp.toPx())
+                                    drawLine(compassPrimary, center, tip, strokeWidth = 5.dp.toPx(), cap = StrokeCap.Round)
+                                    drawLine(compassPrimary, tip, baseLeft, strokeWidth = 3.dp.toPx(), cap = StrokeCap.Round)
+                                    drawLine(compassPrimary, tip, baseRight, strokeWidth = 3.dp.toPx(), cap = StrokeCap.Round)
+                                }
+                            }
+                            drawCircle(compassPrimary, radius = 5.dp.toPx(), center = center)
+                        }
+                        Column(horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.spacedBy(2.dp)) {
+                            Text("N", style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold, modifier = Modifier.padding(bottom = 112.dp))
+                        }
+                        if (relativeQibla != null) {
+                            Surface(shape = RoundedCornerShape(12.dp), color = compassSurface, tonalElevation = 4.dp) {
+                                Text("🕋 ${qiblaBearing?.toInt()}°", modifier = Modifier.padding(horizontal = 10.dp, vertical = 6.dp), style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
+                            }
+                        }
                     }
                     Text("Arah perangkat: ${azimuth.toInt()}° dari utara", style = MaterialTheme.typography.bodyMedium)
                     Text(if (qiblaBearing == null) locationMessage else "Arah kiblat: ${qiblaBearing.toInt()}° dari utara. Putar HP hingga penunjuk mengarah ke kiblat.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
@@ -138,7 +190,7 @@ fun IslamicToolsScreen(onBackClick: () -> Unit) {
                             locationMessage = if (location == null) "Lokasi belum tersedia. Aktifkan GPS lalu coba lagi." else "Lokasi didapatkan dari perangkat."
                         } else locationPermission.launch(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION))
                     }, modifier = Modifier.fillMaxWidth()) { Icon(Icons.Default.LocationOn, null); Spacer(Modifier.width(8.dp)); Text("Gunakan lokasi perangkat") }
-                    Text("Jauhkan HP dari magnet dan benda logam. Akurasi bergantung pada sensor dan kalibrasi perangkat.", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                    Text("Kompas memakai sensor rotasi dan koreksi deklinasi magnetik jika lokasi tersedia. Jauhkan HP dari magnet/logam dan gerakkan HP membentuk angka 8 untuk kalibrasi. Akurasi tetap bergantung pada sensor perangkat.", style = MaterialTheme.typography.labelSmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
             }
 
