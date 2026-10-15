@@ -160,3 +160,33 @@ python3 scripts/validate_daily_prayer_dataset.py
 <p align="center">
   <sub>Al-Qur'an Offline · Open Source · 100% Offline First · © 2026 Kyuryn</sub>
 </p>
+
+## Upgrade tambahan (Suika build)
+
+- Menambahkan halaman **Amalan & Tasbih** yang bisa dibuka dari menu Beranda.
+- Tasbih digital dengan target 33, 99, atau 100; tombol tambah/kurangi/reset; penghitung tersimpan lokal di perangkat.
+- Checklist amalan harian dengan progres dan penyimpanan lokal per tanggal.
+- Fitur utama yang sudah ada (Al-Qur'an offline, pencarian, bookmark, hadits, doa, bacaan sholat, Asmaul Husna, tema, pengaturan notifikasi dan waktu sholat) tetap dipertahankan.
+
+Catatan: fitur pengingat amalan bukan fatwa atau penilaian ibadah. Pastikan rujukan agama diperiksa dari sumber tepercaya.
+
+## Update besar - fitur Amalan
+
+Pembaruan source menambahkan peningkatan di halaman Amalan:
+- Pilihan label dzikir: Subhanallah, Alhamdulillah, Allahu Akbar, dan Istighfar; pilihan tersimpan lokal.
+- Ringkasan konsistensi amalan beruntun dan total centang selama 7 hari terakhir.
+- Ekspor/bagikan ringkasan amalan, progres khatam, target harian, hafalan, murajaah, puasa, kebaikan, catatan kajian, dan jurnal syukur melalui menu berbagi Android.
+- Ringkasan statistik dijelaskan sebagai catatan kebiasaan pribadi, bukan penilaian kesalehan.
+
+Build APK belum diverifikasi pada lingkungan ini karena Gradle Wrapper perlu mengunduh distribusi Gradle dan koneksi jaringan tidak tersedia.
+
+
+## Suika update v1.2 (local tools)
+
+- Islamic Tools screen available from Settings: sensor compass heading, Qibla bearing calculated from last-known device location, Hijri date (Android 7+), and a list of commonly observed Islamic dates. Hijri dates can differ by local moon-sighting decisions.
+- Offline audio player lets the user choose an audio file already on-device through Android's document picker, then play/pause, stop/seek and view playback progress. No murottal audio is bundled in this source.
+- Existing Backup & Restore screen remains available from Settings.
+- Existing prayer-time location and notification preferences remain in Settings.
+- Version bumped to 1.2 (versionCode 3).
+
+Build verification note: `./gradlew assembleDebug --offline` could not start because the Gradle 8.5 distribution is not cached and network access to services.gradle.org was unavailable.

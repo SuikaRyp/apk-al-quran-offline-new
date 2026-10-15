@@ -57,7 +57,9 @@ import kotlinx.coroutines.launch
 fun SettingsScreen(
     viewModel: SettingsViewModel,
     onBackClick: () -> Unit,
-    onPrivacyClick: () -> Unit
+    onPrivacyClick: () -> Unit,
+    onBackupClick: () -> Unit = {},
+    onIslamicToolsClick: () -> Unit = {}
 ) {
     val context = LocalContext.current
     val arabicFontSize by viewModel.arabicFontSize.collectAsState()
@@ -469,6 +471,18 @@ fun SettingsScreen(
                 )
 
                 SettingsPreferenceRow(
+                    title = "Kompas Kiblat, Kalender & Murottal",
+                    subtitle = "Arah kiblat dengan sensor, tanggal Hijriah, dan pemutar audio lokal",
+                    onClick = onIslamicToolsClick
+                )
+
+                SettingsPreferenceRow(
+                    title = "Backup & Restore Data Ibadah",
+                    subtitle = "Ekspor atau pulihkan tasbih, target khatam, catatan, dan jurnal",
+                    onClick = onBackupClick
+                )
+
+                SettingsPreferenceRow(
                     title = "Tentang & Kebijakan Privasi",
                     subtitle = "100% Offline · Tanpa analitik atau pelacakan data",
                     onClick = onPrivacyClick
@@ -476,7 +490,7 @@ fun SettingsScreen(
 
                 SettingsPreferenceRow(
                     title = "Versi Aplikasi",
-                    subtitle = "1.0 (Build 1) · Full Offline",
+                    subtitle = "1.2 (Build 3) · Offline Tools Update",
                     onClick = onPrivacyClick
                 )
             }

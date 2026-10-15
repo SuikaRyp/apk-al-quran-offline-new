@@ -12,8 +12,8 @@ android {
         applicationId = "com.alquran.offline"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.2"
 
         buildConfigField("String", "PROJECT_ID", "\"quran-offline-kyuu-2026-c9f2a87b\"")
         buildConfigField("String", "AUTHOR", "\"Kyuu\"")

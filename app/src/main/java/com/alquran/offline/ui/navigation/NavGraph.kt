@@ -29,6 +29,7 @@ import com.alquran.offline.ui.screens.hadith.HadithListScreen
 import com.alquran.offline.ui.screens.hadith.HadithListViewModel
 import com.alquran.offline.ui.screens.home.HomeScreen
 import com.alquran.offline.ui.screens.home.HomeViewModel
+import com.alquran.offline.ui.screens.amalan.AmalanScreen
 import com.alquran.offline.ui.screens.juz.JuzListScreen
 import com.alquran.offline.ui.screens.juz.JuzListViewModel
 import com.alquran.offline.ui.screens.prayer.PrayerDetailScreen
@@ -42,6 +43,8 @@ import com.alquran.offline.ui.screens.search.SearchScreen
 import com.alquran.offline.ui.screens.search.SearchViewModel
 import com.alquran.offline.ui.screens.settings.SettingsScreen
 import com.alquran.offline.ui.screens.settings.SettingsViewModel
+import com.alquran.offline.ui.screens.settings.BackupRestoreScreen
+import com.alquran.offline.ui.screens.settings.IslamicToolsScreen
 import com.alquran.offline.ui.screens.surah.SurahListScreen
 import com.alquran.offline.ui.screens.surah.SurahListViewModel
 
@@ -76,6 +79,7 @@ fun NavGraph(
                 onNavigateToPrayerList = { navController.navigateSafe(Screen.PrayerList.route) },
                 onNavigateToDailyPrayer = { navController.navigateSafe(Screen.DailyPrayerList.route) },
                 onNavigateToAsmaulHusna = { navController.navigateSafe(Screen.AsmaulHusna.route) },
+                onNavigateToAmalan = { navController.navigateSafe(Screen.Amalan.route) },
                 onNavigateToBookmark = { navController.navigateSafe(Screen.Bookmark.route) },
                 onNavigateToSearch = { navController.navigateSafe(Screen.Search.route) },
                 onNavigateToSettings = { navController.navigateSafe(Screen.Settings.route) },
@@ -302,6 +306,11 @@ fun NavGraph(
             )
         }
 
+        // Daily worship tracker and digital tasbih
+        composable(Screen.Amalan.route) {
+            AmalanScreen(onBackClick = { navController.popBackStackSafe() })
+        }
+
         // Settings Screen
         composable(Screen.Settings.route) {
             val context = LocalContext.current
@@ -311,8 +320,18 @@ fun NavGraph(
             SettingsScreen(
                 viewModel = viewModel,
                 onBackClick = { navController.popBackStackSafe() },
-                onPrivacyClick = { navController.navigateSafe(Screen.About.route) }
+                onPrivacyClick = { navController.navigateSafe(Screen.About.route) },
+                onBackupClick = { navController.navigateSafe(Screen.BackupRestore.route) },
+                onIslamicToolsClick = { navController.navigateSafe(Screen.IslamicTools.route) }
             )
+        }
+
+        composable(Screen.BackupRestore.route) {
+            BackupRestoreScreen(onBackClick = { navController.popBackStackSafe() })
+        }
+
+        composable(Screen.IslamicTools.route) {
+            IslamicToolsScreen(onBackClick = { navController.popBackStackSafe() })
         }
 
         // Privacy Screen

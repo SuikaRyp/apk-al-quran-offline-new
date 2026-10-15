@@ -85,6 +85,7 @@ fun HomeScreen(
     onNavigateToPrayerList: () -> Unit,
     onNavigateToDailyPrayer: () -> Unit = {},
     onNavigateToAsmaulHusna: () -> Unit = {},
+    onNavigateToAmalan: () -> Unit = {},
     onNavigateToBookmark: () -> Unit,
     onNavigateToSearch: () -> Unit,
     onNavigateToSettings: () -> Unit,
@@ -311,6 +312,10 @@ fun HomeScreen(
                     MenuRow(
                         left = MenuItem("Asmaul Husna", "99 Nama Allah", Icons.Default.Star, onNavigateToAsmaulHusna),
                         right = MenuItem("Al-Qur'an 30 Juz", "Navigasi Juz", Icons.Default.Explore, onNavigateToJuzList)
+                    )
+                    MenuRow(
+                        left = MenuItem("Tasbih Digital", "Dzikir & target", Icons.Default.Explore, onNavigateToAmalan, gold = true),
+                        right = MenuItem("Amalan Harian", "Pantau ibadah", Icons.Default.CalendarMonth, onNavigateToAmalan)
                     )
                 }
             }
